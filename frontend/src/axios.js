@@ -40,7 +40,7 @@ const handleQuery = async (id) => {
     console.log('id = ', id);
     const {
         data : { message },
-    } = await instance.get(API_ROOT+'/songs', {
+    } = await instance.post('/songs', {
         params: {
             id: id
         }
