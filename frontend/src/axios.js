@@ -38,14 +38,14 @@ const saveSong = async (id, name, composer, data, user, works) => {
 
 const handleQuery = async (id) => {
     console.log('id = ', id);
-    const {
-        message,
-    } = await instance.post('/songs', {
+    let message = '';
+    await instance.post('/songs', {
         params: {
             id: id
         }
     }).then((result) => {
         console.log(result.data);
+        message = result.data.message;
     })
     .catch(err => {
         console.log(err)
