@@ -51,9 +51,9 @@ router.post("/song", async (req , res) => {
 });
 
 // find song
-router.post("/songs", async (req , res) => {
-    console.log("q = ",req.body.params.id);
-    const id = req.body.params.id
+router.get("/songs", async (req , res) => {
+    console.log("q = ",req.query);
+    const id = req.query.id
 
     const matchData = await WorkModel.find({ id:id })
     const result = (matchData.length !== 0) ? 
