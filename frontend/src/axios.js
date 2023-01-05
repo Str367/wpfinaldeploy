@@ -37,6 +37,7 @@ const saveSong = async (id, name, composer, data, user, works) => {
 }
 
 const handleQuery = async (id) => {
+    console.log('id = ', id);
     const {
         data : { message },
     } = await instance.get('/songs', {
