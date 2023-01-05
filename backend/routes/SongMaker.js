@@ -52,10 +52,10 @@ router.post("/song", async (req , res) => {
 
 // find song
 router.get("/songs", async (req , res) => {
+    console.log("q = ",req.query);
     const id = req.query.id
 
     const matchData = await WorkModel.find({ id:id })
-    console.log(matchData)
     res.json({message : (matchData.length !== 0) ? 
         {id: matchData[0].id, name: matchData[0].name, composer: matchData[0].composer, data: matchData[0].data} :
         `Not Found Song`
