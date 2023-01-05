@@ -56,11 +56,10 @@ router.get("/songs", async (req , res) => {
     const id = req.query.id
 
     const matchData = await WorkModel.find({ id:id })
-    const result = (matchData.length !== 0) ? 
-    {id: matchData[0].id, name: matchData[0].name, composer: matchData[0].composer, data: matchData[0].data} :
-    `Not Found Song`
-    console.log(result)
-    res.json({message : result});
+    res.json({message : (matchData.length !== 0) ? 
+        {id: matchData[0].id, name: matchData[0].name, composer: matchData[0].composer, data: matchData[0].data} :
+        `Not Found Song`
+    });
 });
 
 // create user

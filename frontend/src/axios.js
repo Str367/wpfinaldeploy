@@ -40,7 +40,7 @@ const handleQuery = async (id) => {
     console.log('id = ', id);
     const {
         data : { message },
-    } = await instance.get('/songs', {
+    } = await instance.get(base_server_url+'/songs', {
         params: {
             id: id
         }
