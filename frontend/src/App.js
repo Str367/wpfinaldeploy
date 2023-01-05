@@ -28,7 +28,7 @@ function App() {
   const [startPlaying, setStartPlaying] = useState(false);
   const [user, setUser] = useState('');
   const [works, setWorks] = useState([]);
-  const [bpm, setBpm] = useState(120);
+  const [bpm, setBpm] = useState(90);
   const [countdown, setCountdown] = useState('');
   const [edit, setEdit] = useState(false);
   const [song, setSong] = useState([]);

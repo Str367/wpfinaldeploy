@@ -94,8 +94,8 @@ router.get("/users", async (req, res) => {
 })
 
 //delete song 
-router.get("/deleteSong",async (req,res) => {
-    const {name,id} = req.query;
+router.post("/deleteSong",async (req,res) => {
+    const {name,id} = req.body.params;
     const existingUser = await UserModel.findOne({name});
     const existingSong = await WorkModel.findOne({id});
     try {

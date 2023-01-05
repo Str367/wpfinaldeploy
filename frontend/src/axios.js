@@ -39,7 +39,7 @@ const saveSong = async (id, name, composer, data, user, works) => {
 const handleQuery = async (id) => {
     console.log('id = ', id);
     const {
-        data : { message },
+        message,
     } = await instance.post('/songs', {
         params: {
             id: id
@@ -73,7 +73,7 @@ const handleQuery = async (id) => {
 const DeleteSong = async (id,user) =>{
     const {
         data : {message},
-    } = await instance.get('/deleteSong',{
+    } = await instance.post('/deleteSong',{
         params: {
             id : id,
             name:user,
